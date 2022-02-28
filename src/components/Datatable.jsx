@@ -46,7 +46,7 @@ const Datatable = (props) => {
 
   const { pageIndex } = state
 
-  //   console.log('headerGroups', headerGroups)
+  console.log('headerGroups', headerGroups)
   //   console.log('footerGroups', footerGroups)
 
   return (
@@ -69,21 +69,23 @@ const Datatable = (props) => {
               </div>
               <div className="table-responsive">
                 <table
-                  {...getTableProps()}
+                  {...getTableProps()} // Tablo proplarını buradan alıyoruz.
                   className="table  table-striped table-hover"
                 >
                   <thead>
-                    {headerGroups.map((headerGroup) => (
+                    {headerGroups.map((
+                      headerGroup, // Tablo başlıklarını buradan alıyoruz.
+                    ) => (
                       <tr {...headerGroup.getHeaderGroupProps()}>
                         {headerGroup.headers.map((column) => (
                           <th
                             {...column.getHeaderProps(
-                              column.getSortByToggleProps,
+                              column.getSortByToggleProps, // sort edebilmek için
                             )}
                           >
                             {column.render('Header')}
                             <span>
-                              {column.isSortedDesc ? (
+                              {column.isSortedDesc ? ( // aşağı ve yukarı yönlü okları gösteriyoruz.
                                 <i
                                   className=" fa fa-sort"
                                   aria-hidden="true"

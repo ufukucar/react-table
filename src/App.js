@@ -62,10 +62,12 @@ function App() {
   )
 
   const handleEdit = (row) => {
+    alert('EDIT: ' + JSON.stringify(row))
     console.log(row)
   }
 
   const handleDelete = (row) => {
+    alert('DELETE: ' + JSON.stringify(row))
     console.log(row)
   }
 

@@ -12,11 +12,13 @@ const GlobalFilter = ({
   const onChange = useAsyncDebounce((value) => {
     setGlobalFilter(value || undefined)
   }, 200)
+
   return (
     <div className="mb-3 row">
       <label htmlFor="globalFilterInput" className="col-sm-1 col-form-label">
         Ara:
       </label>
+
       <div className="col-sm-11">
         <input
           className="form-control"
